@@ -9,7 +9,8 @@ export default async function handler(req, res) {
   const data = [];
 
   docSnap.forEach((doc) => {
-    data.push({ id: doc.id, data: doc.data() });
+    if(doc.data().uid === uid)
+        data.push({ id: doc.id, data: doc.data() });
   });
 
   res.status(200).json(data);

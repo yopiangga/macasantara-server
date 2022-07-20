@@ -10,6 +10,7 @@ export default async function handler(req, res) {
       title: req.body.text ?? "",
       time: time,
       uid: req.body.uid,
+      job_id: req.body.job_id,
       text: req.body.text,
     });
     res.status(200).json({ data: time.toString(), message: "Oke" });
